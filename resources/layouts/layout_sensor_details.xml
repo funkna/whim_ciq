@@ -1,0 +1,12 @@
+<resources>
+    <layouts>
+		<layout id="SensorDetails">
+		    <label id="sensor_name" x="50" y="20" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLUE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+		    <label id="impacts" x="35" y="100" font="Gfx.FONT_SMALL" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+		    <label id="index" x="35" y="130" font="Gfx.FONT_SMALL" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+			<label id="impacts_field" x="150" y="100" font="Gfx.FONT_SMALL" color="Gfx.COLOR_RED" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+		    <label id="index_field" x="150" y="130" font="Gfx.FONT_SMALL" color="Gfx.COLOR_RED" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+		</layout>
+    </layouts>
+</resources>
+	
