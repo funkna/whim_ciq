@@ -3,7 +3,7 @@ using Toybox.Graphics;
 using Toybox.System;
 using Toybox.Lang;
 
-class SensorDetailsView extends WatchUi.WatchFace {
+class SensorDetailsView extends WatchUi.View {
 
     hidden var mImpacts, mIndex;
 
@@ -21,11 +21,16 @@ class SensorDetailsView extends WatchUi.WatchFace {
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
         View.findDrawableById("index").setText(Rez.Strings.text_index);
     }
+    
+    function onShow() {
+        View.onShow();
+    }
 
     // Update the view
     function onUpdate(dc) {
-    	View.onUpdate(dc);
-    	
+        // Call the parent onUpdate function to redraw the layout
+        View.onUpdate(dc);
+    
     	View.findDrawableById("impacts_field").setText(mImpacts.toString());
         View.findDrawableById("index_field").setText(mIndex.toString());
     }
@@ -45,3 +50,31 @@ class SensorDetailsView extends WatchUi.WatchFace {
     }
 
 }
+
+
+class SensorDetailsDelegate extends WHIMBehaviorDelegate {
+	
+	function initialize(view) {
+        WHIMBehaviorDelegate.initialize(view);
+    }
+
+    function onBack() {
+        var view = new SensorPairView();
+        WatchUi.switchToView(view, new SensorPairDelegate(view), WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
+
+    function onEnter() {
+        return true;
+    }
+
+    function onNextPage() {
+        return true;
+    }
+
+    function onPreviousPage() {
+        return true;
+    }
+	
+}
+

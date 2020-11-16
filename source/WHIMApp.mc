@@ -1,6 +1,6 @@
 using Toybox.Application;
 
-class SensorDetailsApp extends Application.AppBase {
+class WHIMApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
@@ -16,7 +16,9 @@ class SensorDetailsApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() {
-        return [ new SensorDetailsView() ];
+    	var view = new SensorPairView();
+        return [ view, new SensorPairDelegate(view) ];
     }
 
 }
+

@@ -2,8 +2,9 @@ using Toybox.WatchUi;
 using Toybox.Graphics;
 using Toybox.System;
 using Toybox.Lang;
+using Toybox.Communications;
 
-class SensorPairView extends WatchUi.WatchFace {
+class SensorPairView extends WatchUi.View {
 
     hidden var mCounter, mMessages, mTimer;
 
@@ -13,7 +14,7 @@ class SensorPairView extends WatchUi.WatchFace {
         mMessages = [Rez.Strings.text_waiting_for_message1, Rez.Strings.text_waiting_for_message2, Rez.Strings.text_waiting_for_message3];
         mTimer = new Timer.Timer();
     }
-
+    
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorPair(dc));
@@ -28,6 +29,7 @@ class SensorPairView extends WatchUi.WatchFace {
     // the state of this View and prepare it to be shown. This includes
     // loading resources into memory.
     function onShow() {
+    	View.onShow();
         mTimer.start(method(:timerCallback), 500, true);
     }
 
@@ -47,6 +49,7 @@ class SensorPairView extends WatchUi.WatchFace {
     // state of this View here. This includes freeing resources from
     // memory.
     function onHide() {
+        mTimer.stop();
     }
 
     // The user has just looked at their watch. Timers and animations may be started here.
@@ -55,6 +58,20 @@ class SensorPairView extends WatchUi.WatchFace {
 
     // Terminate any active timers and prepare for slow updates.
     function onEnterSleep() {
+    }
+
+}
+
+class SensorPairDelegate extends WHIMBehaviorDelegate {
+
+	function initialize(view) {
+        WHIMBehaviorDelegate.initialize(view);
+    }
+
+    function onKey(keyEvent) {
+        var view = new SensorDetailsView();
+        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_IMMEDIATE);
+        return true;
     }
 
 }

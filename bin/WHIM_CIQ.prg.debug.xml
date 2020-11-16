@@ -1,176 +1,291 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <debugInfo>
-<manifest filename="C:\Users\funkn\OneDrive\University\Class Documents\ENEL 500A\Workspace\WHIM_CIQ\manifest.xml"/>
+<manifest filename="C:\Github\WHIM_CIQ\manifest.xml"/>
 <pcToLineNum>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="3" lineNum="5" pc="268435456" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="3" lineNum="6" pc="268435460" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="4" lineNum="10" pc="268435479" symbol="onStart"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="5" lineNum="14" pc="268435484" symbol="onStop"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="6" lineNum="18" pc="268435489" symbol="getInitialView"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairApp.mc" id="6" lineNum="19" pc="268435493" symbol="getInitialView"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="8" lineNum="10" pc="268435531" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="8" lineNum="11" pc="268435535" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="8" lineNum="12" pc="268435553" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="8" lineNum="13" pc="268435566" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="8" lineNum="14" pc="268435664" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="9" lineNum="18" pc="268435701" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="9" lineNum="19" pc="268435705" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="9" lineNum="20" pc="268435742" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="10" lineNum="23" pc="268435795" symbol="timerCallback"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="10" lineNum="24" pc="268435799" symbol="timerCallback"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="11" lineNum="30" pc="268435816" symbol="onShow"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="11" lineNum="31" pc="268435820" symbol="onShow"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="35" pc="268435862" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="37" pc="268435866" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="39" pc="268435886" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="40" pc="268435935" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="41" pc="268435954" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="12" lineNum="42" pc="268435983" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="13" lineNum="49" pc="268436000" symbol="onHide"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="14" lineNum="53" pc="268436005" symbol="onExitSleep"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorPairView.mc" id="15" lineNum="57" pc="268436010" symbol="onEnterSleep"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="17" lineNum="10" pc="268436015" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="17" lineNum="11" pc="268436019" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="17" lineNum="12" pc="268436037" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="17" lineNum="13" pc="268436050" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="18" lineNum="18" pc="268436064" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="18" lineNum="19" pc="268436068" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="18" lineNum="20" pc="268436105" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="18" lineNum="21" pc="268436157" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="18" lineNum="22" pc="268436209" symbol="onLayout"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="19" lineNum="26" pc="268436262" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="19" lineNum="27" pc="268436266" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="19" lineNum="29" pc="268436286" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="19" lineNum="30" pc="268436335" symbol="onUpdate"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="20" lineNum="36" pc="268436385" symbol="onHide"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="21" lineNum="40" pc="268436390" symbol="onExitSleep"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="22" lineNum="44" pc="268436395" symbol="onEnterSleep"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="24" lineNum="5" pc="268436400" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="24" lineNum="6" pc="268436404" symbol="initialize"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="25" lineNum="10" pc="268436423" symbol="onStart"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="26" lineNum="14" pc="268436428" symbol="onStop"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="27" lineNum="18" pc="268436433" symbol="getInitialView"/>
-<entry filename="C:\\Users\\funkn\\OneDrive\\University\\Class Documents\\ENEL 500A\\Workspace\\WHIM_CIQ\\source\\SensorDetailsApp.mc" id="27" lineNum="19" pc="268436437" symbol="getInitialView"/>
-<entry filename="Rez" id="33" lineNum="15" pc="268436475" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="17" pc="268436487" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="18" pc="268436620" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="19" pc="268436753" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="20" pc="268436886" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="21" pc="268437019" symbol="SensorDetails"/>
-<entry filename="Rez" id="33" lineNum="23" pc="268437152" symbol="SensorDetails"/>
-<entry filename="Rez" id="34" lineNum="32" pc="268437210" symbol="SensorPair"/>
-<entry filename="Rez" id="34" lineNum="34" pc="268437222" symbol="SensorPair"/>
-<entry filename="Rez" id="34" lineNum="35" pc="268437355" symbol="SensorPair"/>
-<entry filename="Rez" id="34" lineNum="37" pc="268437488" symbol="SensorPair"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="3" lineNum="10" pc="268435456" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="3" lineNum="11" pc="268435460" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="3" lineNum="12" pc="268435478" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="3" lineNum="13" pc="268435491" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="4" lineNum="18" pc="268435505" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="4" lineNum="19" pc="268435509" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="4" lineNum="20" pc="268435546" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="4" lineNum="21" pc="268435598" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="4" lineNum="22" pc="268435650" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="5" lineNum="25" pc="268435703" symbol="onShow"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="5" lineNum="26" pc="268435707" symbol="onShow"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="6" lineNum="30" pc="268435726" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="6" lineNum="32" pc="268435730" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="6" lineNum="34" pc="268435750" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="6" lineNum="35" pc="268435799" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="7" lineNum="41" pc="268435849" symbol="onHide"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="8" lineNum="45" pc="268435854" symbol="onExitSleep"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="9" lineNum="49" pc="268435859" symbol="onEnterSleep"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="11" lineNum="57" pc="268435864" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="11" lineNum="58" pc="268435868" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="12" lineNum="61" pc="268435889" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="12" lineNum="62" pc="268435893" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="12" lineNum="63" pc="268435917" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="12" lineNum="64" pc="268435971" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="13" lineNum="67" pc="268435975" symbol="onEnter"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="13" lineNum="68" pc="268435979" symbol="onEnter"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="14" lineNum="71" pc="268435983" symbol="onNextPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="14" lineNum="72" pc="268435987" symbol="onNextPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="15" lineNum="75" pc="268435991" symbol="onPreviousPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorDetailsView.mc" id="15" lineNum="76" pc="268435995" symbol="onPreviousPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="17" lineNum="5" pc="268435999" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="17" lineNum="6" pc="268436003" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="18" lineNum="10" pc="268436022" symbol="onStart"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="19" lineNum="14" pc="268436027" symbol="onStop"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="20" lineNum="18" pc="268436032" symbol="getInitialView"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="20" lineNum="19" pc="268436036" symbol="getInitialView"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\WHIMApp.mc" id="20" lineNum="20" pc="268436060" symbol="getInitialView"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="22" lineNum="10" pc="268436110" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="22" lineNum="11" pc="268436114" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="22" lineNum="12" pc="268436157" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="23" lineNum="15" pc="268436168" symbol="onKey"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="23" lineNum="16" pc="268436172" symbol="onKey"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="24" lineNum="19" pc="268436176" symbol="onEnter"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="24" lineNum="20" pc="268436180" symbol="onEnter"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="25" lineNum="23" pc="268436184" symbol="onNextPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="25" lineNum="24" pc="268436188" symbol="onNextPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="26" lineNum="27" pc="268436192" symbol="onPreviousPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="26" lineNum="28" pc="268436196" symbol="onPreviousPage"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="27" lineNum="31" pc="268436200" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="27" lineNum="32" pc="268436204" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="27" lineNum="33" pc="268436232" symbol="onBack"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="28" lineNum="36" pc="268436236" symbol="onTap"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\zWHIMBehaviorDelegate.mc" id="28" lineNum="37" pc="268436240" symbol="onTap"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="30" lineNum="11" pc="268436244" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="30" lineNum="12" pc="268436248" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="30" lineNum="13" pc="268436266" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="30" lineNum="14" pc="268436279" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="30" lineNum="15" pc="268436377" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="31" lineNum="19" pc="268436414" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="31" lineNum="20" pc="268436418" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="31" lineNum="21" pc="268436455" symbol="onLayout"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="32" lineNum="24" pc="268436508" symbol="timerCallback"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="32" lineNum="25" pc="268436512" symbol="timerCallback"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="33" lineNum="31" pc="268436529" symbol="onShow"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="33" lineNum="32" pc="268436533" symbol="onShow"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="33" lineNum="33" pc="268436551" symbol="onShow"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="37" pc="268436593" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="39" pc="268436597" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="41" pc="268436617" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="42" pc="268436666" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="43" pc="268436685" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="34" lineNum="44" pc="268436714" symbol="onUpdate"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="35" lineNum="51" pc="268436731" symbol="onHide"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="35" lineNum="52" pc="268436735" symbol="onHide"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="36" lineNum="56" pc="268436754" symbol="onExitSleep"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="37" lineNum="60" pc="268436759" symbol="onEnterSleep"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="39" lineNum="67" pc="268436764" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="39" lineNum="68" pc="268436768" symbol="initialize"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="40" lineNum="71" pc="268436789" symbol="onKey"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="40" lineNum="72" pc="268436793" symbol="onKey"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="40" lineNum="73" pc="268436817" symbol="onKey"/>
+<entry filename="C:\\Github\\WHIM_CIQ\\source\\SensorPairView.mc" id="40" lineNum="74" pc="268436871" symbol="onKey"/>
+<entry filename="Rez" id="46" lineNum="15" pc="268436875" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="17" pc="268436887" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="18" pc="268437020" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="19" pc="268437153" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="20" pc="268437286" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="21" pc="268437419" symbol="SensorDetails"/>
+<entry filename="Rez" id="46" lineNum="23" pc="268437552" symbol="SensorDetails"/>
+<entry filename="Rez" id="47" lineNum="32" pc="268437610" symbol="SensorPair"/>
+<entry filename="Rez" id="47" lineNum="34" pc="268437622" symbol="SensorPair"/>
+<entry filename="Rez" id="47" lineNum="35" pc="268437755" symbol="SensorPair"/>
+<entry filename="Rez" id="47" lineNum="37" pc="268437888" symbol="SensorPair"/>
 </pcToLineNum>
 <symbolTable>
 <entry id="8388639" module="true" symbol="Graphics"/>
+<entry id="12" object="true" symbol="WHIMBehaviorDelegate"/>
 <entry id="8388632" method="true" symbol="&lt;init&gt;"/>
 <entry id="4" module="true" symbol="globals/Rez/Menus"/>
-<entry field="true" id="26" symbol="text_index"/>
+<entry id="10" object="true" symbol="SensorDetailsDelegate"/>
+<entry field="true" id="32" symbol="text_index"/>
 <entry field="true" id="8388611" module="true" symbol="Toybox"/>
-<entry field="true" id="27" symbol="AppName"/>
+<entry field="true" id="33" symbol="AppName"/>
 <entry id="8" module="true" symbol="globals/Rez/Strings"/>
+<entry field="true" id="20" symbol="relatedView"/>
 <entry id="8388772" module="true" object="true" symbol="Fonts"/>
-<entry field="true" id="22" symbol="text_sensor_name"/>
+<entry field="true" id="27" symbol="text_sensor_name"/>
+<entry field="true" id="19" symbol="mDevice"/>
 <entry id="8388648" module="true" symbol="WatchUi"/>
-<entry id="21" method="true" symbol="SensorPair"/>
+<entry id="8389081" method="true" symbol="onBack"/>
+<entry id="26" method="true" symbol="SensorPair"/>
 <entry id="2" module="true" symbol="globals/Rez"/>
+<entry id="14" object="true" symbol="SensorPairDelegate"/>
 <entry id="8389124" method="true" symbol="onUpdate"/>
 <entry field="true" id="8389065" symbol="locY"/>
 <entry field="true" id="8389064" symbol="locX"/>
 <entry id="8388771" module="true" object="true" symbol="Drawables"/>
 <entry id="8389348" symbol="font"/>
-<entry id="18" module="true" symbol="Menus"/>
+<entry id="8389079" method="true" symbol="onPreviousPage"/>
+<entry id="23" module="true" symbol="Menus"/>
 <entry id="6" module="true" symbol="globals/Rez/Layouts"/>
 <entry id="8389122" method="true" symbol="onLayout"/>
 <entry id="8389376" method="true" symbol="onEnterSleep"/>
 <entry field="true" id="8389063" symbol="identifier"/>
 <entry id="8389349" symbol="justification"/>
+<entry id="8389098" method="true" symbol="onTap"/>
+<entry id="11" object="true" symbol="WHIMApp"/>
 <entry id="7" module="true" symbol="globals/Rez/JsonData"/>
+<entry id="8388637" module="true" symbol="Communications"/>
 <entry id="3" module="true" symbol="globals/Rez/Drawables"/>
-<entry id="9" object="true" symbol="SensorPairApp"/>
 <entry id="8389377" method="true" symbol="onExitSleep"/>
 <entry id="8388644" module="true" symbol="System"/>
-<entry id="11" object="true" symbol="SensorDetailsView"/>
-<entry id="10" object="true" symbol="SensorPairView"/>
+<entry id="9" object="true" symbol="SensorDetailsView"/>
+<entry id="13" object="true" symbol="SensorPairView"/>
 <entry id="8388769" module="true" object="true" symbol="Rez"/>
-<entry id="16" method="true" symbol="timerCallback"/>
+<entry id="18" method="true" symbol="timerCallback"/>
 <entry id="8388640" module="true" symbol="Lang"/>
 <entry id="8390088" module="true" object="true" symbol="JsonData"/>
-<entry field="true" id="19" symbol="LauncherIcon"/>
+<entry id="21" method="true" symbol="onEnter"/>
+<entry field="true" id="24" symbol="LauncherIcon"/>
 <entry id="8388610" symbol="statics"/>
 <entry id="8389123" method="true" symbol="onShow"/>
-<entry id="12" object="true" symbol="SensorDetailsApp"/>
 <entry id="8389350" module="true" symbol="globals"/>
 <entry id="8388770" module="true" object="true" symbol="Strings"/>
-<entry field="true" id="23" symbol="text_impacts"/>
-<entry field="true" id="14" symbol="mMessages"/>
+<entry field="true" id="28" symbol="text_impacts"/>
+<entry field="true" id="16" symbol="mMessages"/>
 <entry id="8388702" method="true" symbol="initialize"/>
 <entry id="8389279" method="true" symbol="onStart"/>
 <entry field="true" id="8388889" symbol="mIndex"/>
 <entry id="8389280" method="true" symbol="getInitialView"/>
 <entry id="8389281" method="true" symbol="onStop"/>
 <entry id="8389347" symbol="color"/>
-<entry field="true" id="13" symbol="mCounter"/>
-<entry field="true" id="29" symbol="mImpacts"/>
-<entry id="17" module="true" symbol="Layouts"/>
-<entry id="20" method="true" symbol="SensorDetails"/>
+<entry id="8389097" method="true" symbol="onKey"/>
+<entry field="true" id="15" symbol="mCounter"/>
+<entry field="true" id="30" symbol="device"/>
+<entry field="true" id="35" symbol="mImpacts"/>
+<entry id="22" module="true" symbol="Layouts"/>
+<entry id="25" method="true" symbol="SensorDetails"/>
 <entry id="5" module="true" symbol="globals/Rez/Fonts"/>
-<entry field="true" id="15" symbol="mTimer"/>
+<entry field="true" id="17" symbol="mTimer"/>
 <entry id="8389125" method="true" symbol="onHide"/>
-<entry field="true" id="24" symbol="text_waiting_for_message3"/>
-<entry field="true" id="28" symbol="text_waiting_for_message2"/>
-<entry field="true" id="25" symbol="text_waiting_for_message1"/>
+<entry field="true" id="29" symbol="text_waiting_for_message3"/>
+<entry field="true" id="34" symbol="text_waiting_for_message2"/>
+<entry field="true" id="31" symbol="text_waiting_for_message1"/>
+<entry id="8389078" method="true" symbol="onNextPage"/>
 <entry id="8388635" module="true" symbol="Application"/>
 </symbolTable>
 <localVars>
-<entry arg="true" endPc="268435484" name="state" stackId="1" startPc="268435479"/>
-<entry arg="true" endPc="268435489" name="state" stackId="1" startPc="268435484"/>
-<entry arg="true" endPc="268435795" name="dc" stackId="1" startPc="268435701"/>
-<entry arg="true" endPc="268436000" name="dc" stackId="1" startPc="268435862"/>
-<entry arg="true" endPc="268436262" name="dc" stackId="1" startPc="268436064"/>
-<entry arg="true" endPc="268436385" name="dc" stackId="1" startPc="268436262"/>
-<entry arg="true" endPc="268436428" name="state" stackId="1" startPc="268436423"/>
-<entry arg="true" endPc="268436433" name="state" stackId="1" startPc="268436428"/>
-<entry endPc="268437209" name="rez_cmp_local_text_impacts_field" stackId="5" startPc="268436487"/>
-<entry endPc="268437209" name="rez_cmp_local_text_sensor_name" stackId="2" startPc="268436487"/>
-<entry endPc="268437209" name="rez_cmp_local_text_impacts" stackId="3" startPc="268436487"/>
-<entry endPc="268437209" name="rez_cmp_local_text_index_field" stackId="6" startPc="268436487"/>
-<entry endPc="268437209" name="rez_cmp_local_text_index" stackId="4" startPc="268436487"/>
-<entry arg="true" endPc="268437210" name="dc" stackId="1" startPc="268436475"/>
-<entry endPc="268437515" name="rez_cmp_local_text_title" stackId="2" startPc="268437222"/>
-<entry endPc="268437515" name="rez_cmp_local_text_message" stackId="3" startPc="268437222"/>
-<entry arg="true" endPc="268437516" name="dc" stackId="1" startPc="268437210"/>
+<entry arg="true" endPc="268435703" name="dc" stackId="1" startPc="268435505"/>
+<entry arg="true" endPc="268435849" name="dc" stackId="1" startPc="268435726"/>
+<entry arg="true" endPc="268435889" name="view" stackId="1" startPc="268435864"/>
+<entry endPc="268435974" name="view" stackId="1" startPc="268435893"/>
+<entry arg="true" endPc="268436027" name="state" stackId="1" startPc="268436022"/>
+<entry arg="true" endPc="268436032" name="state" stackId="1" startPc="268436027"/>
+<entry endPc="268436109" name="view" stackId="1" startPc="268436036"/>
+<entry arg="true" endPc="268436168" name="view" stackId="1" startPc="268436110"/>
+<entry arg="true" endPc="268436176" name="evt" stackId="1" startPc="268436168"/>
+<entry arg="true" endPc="268436508" name="dc" stackId="1" startPc="268436414"/>
+<entry arg="true" endPc="268436731" name="dc" stackId="1" startPc="268436593"/>
+<entry arg="true" endPc="268436789" name="view" stackId="1" startPc="268436764"/>
+<entry endPc="268436874" name="view" stackId="2" startPc="268436793"/>
+<entry arg="true" endPc="268436875" name="keyEvent" stackId="1" startPc="268436789"/>
+<entry endPc="268437609" name="rez_cmp_local_text_impacts_field" stackId="5" startPc="268436887"/>
+<entry endPc="268437609" name="rez_cmp_local_text_sensor_name" stackId="2" startPc="268436887"/>
+<entry endPc="268437609" name="rez_cmp_local_text_impacts" stackId="3" startPc="268436887"/>
+<entry endPc="268437609" name="rez_cmp_local_text_index_field" stackId="6" startPc="268436887"/>
+<entry endPc="268437609" name="rez_cmp_local_text_index" stackId="4" startPc="268436887"/>
+<entry arg="true" endPc="268437610" name="dc" stackId="1" startPc="268436875"/>
+<entry endPc="268437915" name="rez_cmp_local_text_title" stackId="2" startPc="268437622"/>
+<entry endPc="268437915" name="rez_cmp_local_text_message" stackId="3" startPc="268437622"/>
+<entry arg="true" endPc="268437916" name="dc" stackId="1" startPc="268437610"/>
 </localVars>
 <annotations/>
 <dataEntryOffsetMappings>
 <dataEntry offset="87" parentId="" symbolId="globals" type="module"/>
-<dataEntry offset="166" parentId="globals" symbolId="SensorPairApp" type="class"/>
-<dataEntry offset="237" parentId="globals" symbolId="SensorPairView" type="class"/>
-<dataEntry offset="364" parentId="globals" symbolId="Rez" type="module"/>
-<dataEntry offset="443" parentId="Rez" symbolId="Drawables" type="module"/>
-<dataEntry offset="482" parentId="Rez" symbolId="Menus" type="module"/>
-<dataEntry offset="513" parentId="Rez" symbolId="Fonts" type="module"/>
-<dataEntry offset="544" parentId="Rez" symbolId="Layouts" type="module"/>
-<dataEntry offset="591" parentId="Rez" symbolId="JsonData" type="module"/>
-<dataEntry offset="622" parentId="Rez" symbolId="Strings" type="module"/>
-<dataEntry offset="709" parentId="globals" symbolId="SensorDetailsView" type="class"/>
-<dataEntry offset="812" parentId="globals" symbolId="SensorDetailsApp" type="class"/>
+<dataEntry offset="182" parentId="globals" symbolId="WHIMApp" type="class"/>
+<dataEntry offset="253" parentId="globals" symbolId="SensorPairView" type="class"/>
+<dataEntry offset="380" parentId="globals" symbolId="SensorPairDelegate" type="class"/>
+<dataEntry offset="435" parentId="globals" symbolId="WHIMBehaviorDelegate" type="class"/>
+<dataEntry offset="546" parentId="globals" symbolId="Rez" type="module"/>
+<dataEntry offset="625" parentId="Rez" symbolId="Drawables" type="module"/>
+<dataEntry offset="664" parentId="Rez" symbolId="Menus" type="module"/>
+<dataEntry offset="695" parentId="Rez" symbolId="Fonts" type="module"/>
+<dataEntry offset="726" parentId="Rez" symbolId="Layouts" type="module"/>
+<dataEntry offset="773" parentId="Rez" symbolId="JsonData" type="module"/>
+<dataEntry offset="804" parentId="Rez" symbolId="Strings" type="module"/>
+<dataEntry offset="899" parentId="globals" symbolId="SensorDetailsDelegate" type="class"/>
+<dataEntry offset="978" parentId="globals" symbolId="SensorDetailsView" type="class"/>
 </dataEntryOffsetMappings>
 <functions>
-<functionEntry accessMode="public" name="initialize" parent="SensorPairApp">
+<functionEntry accessMode="public" name="initialize" parent="SensorDetailsView">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" name="onStart" parent="SensorPairApp">
+<functionEntry accessMode="public" name="onLayout" parent="SensorDetailsView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onShow" parent="SensorDetailsView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onUpdate" parent="SensorDetailsView">
+<param id="dc"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onHide" parent="SensorDetailsView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onExitSleep" parent="SensorDetailsView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onEnterSleep" parent="SensorDetailsView">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="SensorDetailsDelegate">
+<param id="view"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onBack" parent="SensorDetailsDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onEnter" parent="SensorDetailsDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onNextPage" parent="SensorDetailsDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onPreviousPage" parent="SensorDetailsDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="WHIMApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onStart" parent="WHIMApp">
 <param id="state"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" name="onStop" parent="SensorPairApp">
+<functionEntry accessMode="public" name="onStop" parent="WHIMApp">
 <param id="state"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" name="getInitialView" parent="SensorPairApp">
+<functionEntry accessMode="public" name="getInitialView" parent="WHIMApp">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="initialize" parent="WHIMBehaviorDelegate">
+<param id="view"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onKey" parent="WHIMBehaviorDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onEnter" parent="WHIMBehaviorDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onNextPage" parent="WHIMBehaviorDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onPreviousPage" parent="WHIMBehaviorDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onBack" parent="WHIMBehaviorDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry accessMode="public" name="onTap" parent="WHIMBehaviorDelegate">
 <documentation/>
 </functionEntry>
 <functionEntry accessMode="public" name="initialize" parent="SensorPairView">
@@ -199,38 +314,12 @@
 <functionEntry accessMode="public" name="onEnterSleep" parent="SensorPairView">
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" name="initialize" parent="SensorDetailsView">
+<functionEntry accessMode="public" name="initialize" parent="SensorPairDelegate">
+<param id="view"/>
 <documentation/>
 </functionEntry>
-<functionEntry accessMode="public" name="onLayout" parent="SensorDetailsView">
-<param id="dc"/>
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onUpdate" parent="SensorDetailsView">
-<param id="dc"/>
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onHide" parent="SensorDetailsView">
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onExitSleep" parent="SensorDetailsView">
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onEnterSleep" parent="SensorDetailsView">
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="initialize" parent="SensorDetailsApp">
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onStart" parent="SensorDetailsApp">
-<param id="state"/>
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="onStop" parent="SensorDetailsApp">
-<param id="state"/>
-<documentation/>
-</functionEntry>
-<functionEntry accessMode="public" name="getInitialView" parent="SensorDetailsApp">
+<functionEntry accessMode="public" name="onKey" parent="SensorPairDelegate">
+<param id="keyEvent"/>
 <documentation/>
 </functionEntry>
 <functionEntry accessMode="public" name="SensorDetails" parent="Layouts">

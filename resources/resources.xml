@@ -1,0 +1,8 @@
+<resources>
+    <bitmaps>
+        <bitmap id="LauncherIcon" filename="drawables/launcher_icon.png" />
+    </bitmaps>
+    <strings>
+        <string id="device">fr935</string>
+    </strings>
+</resources>
