@@ -8,7 +8,7 @@ class SensorDetailsView extends WatchUi.View {
     hidden var mImpacts, mIndex;
 
     function initialize() {
-        WatchFace.initialize();
+        View.initialize();
         mImpacts = 0;
 		mIndex = 0;
 		

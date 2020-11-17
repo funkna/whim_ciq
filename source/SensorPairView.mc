@@ -1,6 +1,7 @@
 using Toybox.WatchUi;
 using Toybox.Graphics;
 using Toybox.System;
+using Toybox.Timer;
 using Toybox.Lang;
 using Toybox.Communications;
 
@@ -9,7 +10,7 @@ class SensorPairView extends WatchUi.View {
     hidden var mCounter, mMessages, mTimer;
 
     function initialize() {
-        WatchFace.initialize();
+        View.initialize();
         mCounter = 0;
         mMessages = [Rez.Strings.text_waiting_for_message1, Rez.Strings.text_waiting_for_message2, Rez.Strings.text_waiting_for_message3];
         mTimer = new Timer.Timer();
