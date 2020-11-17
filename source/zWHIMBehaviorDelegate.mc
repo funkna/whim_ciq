@@ -8,6 +8,7 @@ class WHIMBehaviorDelegate extends WatchUi.BehaviorDelegate {
     var relatedView;
 
     function initialize(view) {
+    	BehaviorDelegate.initialize();
         mDevice = WatchUi.loadResource(Rez.Strings.device);
         relatedView = view;
     }
