@@ -4,7 +4,9 @@
             <iq:product id="fenix6spro"/>
             <iq:product id="fr245m"/>
         </iq:products>
-        <iq:permissions/>
+        <iq:permissions>
+            <iq:uses-permission id="Ant"/>
+        </iq:permissions>
         <iq:languages>
             <iq:language>eng</iq:language>
         </iq:languages>
