@@ -5,8 +5,8 @@
     <string id="text_waiting_for_message2">Looking for sensor..</string>
     <string id="text_waiting_for_message3">Looking for sensor...</string>
     <!-- SensorDetalsView Strings -->
-    <string id="text_sensor_name">SensorName</string>
     <string id="text_impacts">Impacts:</string>
-    <string id="text_index">Index:</string>
+    <string id="text_status_safe">SAFE</string>
+    <string id="text_status_urgent">DANGER</string>
     
 </strings>

@@ -1,38 +1,49 @@
 using Toybox.WatchUi;
 using Toybox.Graphics;
 using Toybox.System;
+using Toybox.Timer;
 using Toybox.Lang;
+
+var impacts = 1;
 
 class SensorDetailsView extends WatchUi.View {
 
-    hidden var mImpacts, mIndex;
+    const VIEW_ID = DETAILS;
 
     function initialize() {
         View.initialize();
-        mImpacts = 0;
-		mIndex = 0;
-		
     }
 
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorDetails(dc));
-        View.findDrawableById("sensor_name").setText(Rez.Strings.text_sensor_name);
+        current_view_id = VIEW_ID;
+        View.findDrawableById("sensor_name").setText("ID");
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
-        View.findDrawableById("index").setText(Rez.Strings.text_index);
     }
-    
+
+    // Called when this View is brought to the foreground. Restore
+    // the state of this View and prepare it to be shown. This includes
+    // loading resources into memory.
     function onShow() {
         View.onShow();
     }
 
     // Update the view
     function onUpdate(dc) {
+        View.findDrawableById("impacts_field").setText(impacts.toString());
+
+        if (impacts > 0) {
+            View.findDrawableById("status").setColor(Graphics.COLOR_RED);
+            View.findDrawableById("status").setText(Rez.Strings.text_status_urgent);
+        }
+        else {
+            View.findDrawableById("status").setColor(Graphics.COLOR_GREEN);
+            View.findDrawableById("status").setText(Rez.Strings.text_status_safe);
+        }
+
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-    
-    	View.findDrawableById("impacts_field").setText(mImpacts.toString());
-        View.findDrawableById("index_field").setText(mIndex.toString());
     }
 
     // Called when this View is removed from the screen. Save the
@@ -53,15 +64,9 @@ class SensorDetailsView extends WatchUi.View {
 
 
 class SensorDetailsDelegate extends WHIMBehaviorDelegate {
-	
-	function initialize(view) {
-        WHIMBehaviorDelegate.initialize(view);
-    }
 
-    function onBack() {
-        var view = new SensorPairView();
-        WatchUi.switchToView(view, new SensorPairDelegate(view), WatchUi.SLIDE_IMMEDIATE);
-        return true;
+    function initialize(view) {
+        WHIMBehaviorDelegate.initialize(view);
     }
 
     function onEnter() {
@@ -75,6 +80,6 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
     function onPreviousPage() {
         return true;
     }
-	
+
 }
 
