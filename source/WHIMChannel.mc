@@ -17,6 +17,7 @@ class WHIMChannel extends Ant.GenericChannel
     const FREQUENCY = 66;
 
     var state = UNACQUIRED;
+    var reopen = false;
 
     function initialize() {
         try {
@@ -26,6 +27,8 @@ class WHIMChannel extends Ant.GenericChannel
 
             // Channel has been acquired, set to CLOSED state
             state = CLOSED;
+            // Set reopen flag to false on initialize
+            reopen = false;
 
             // Set the configuration
             var deviceConfig = new Ant.DeviceConfig( {
@@ -36,7 +39,7 @@ class WHIMChannel extends Ant.GenericChannel
                 :radioFrequency => FREQUENCY } );
             GenericChannel.setDeviceConfig(deviceConfig);
 
-            System.println( "Channel initialized and opened." );
+            System.println( "Channel initialized" );
 
         } catch ( ex instanceof UnableToAcquireChannelException ) {
             System.println( "ERROR: Unable to acquire channel" );
@@ -48,6 +51,7 @@ class WHIMChannel extends Ant.GenericChannel
     function open() {
         // Attempt to open channel and handle accordingly
         if( GenericChannel.open() ) {
+            System.println( "Channel opened" );
             state = OPEN;
         }
         else {
@@ -58,6 +62,7 @@ class WHIMChannel extends Ant.GenericChannel
     function close() {
         state = CLOSED;
         GenericChannel.close();
+        System.println( "Channel closed" );
     }
 
     function release() {
@@ -98,21 +103,36 @@ class WHIMChannel extends Ant.GenericChannel
                     var eventCode = payload[1];
 
                     switch( eventCode ) {
+
                         case Ant.MSG_CODE_EVENT_RX_FAIL:
-                            System.println( "RX_FAIL" );
+                            System.println( "Response event: RX_FAIL" );
                             break;
+
                         case Ant.MSG_CODE_EVENT_TX:
-                            System.println( "EVENT_TX" );
+                            System.println( "Response event: EVENT_TX" );
                             break;
+
                         case Ant.MSG_CODE_EVENT_CHANNEL_CLOSED:
-                            System.println( "TIMER_EXPIRED_REOPEN_CHANNEL" );
-                            open();
+                            System.println( "Response event: CHANNEL_CLOSED" );
+                            checkChannelClosure();
+                            if (true == reopen) {
+                                reopen = false;
+                                open();
+                            }
                             break;
+
                         case Ant.MSG_CODE_EVENT_RX_FAIL_GO_TO_SEARCH:
-                            System.println( "RX_FAIL_GO_TO_SEARCH" );
+                            System.println( "Response event: RX_FAIL_GO_TO_SEARCH" );
                             var view = new SensorPairView();
                             WatchUi.switchToView(view, new SensorPairDelegate(view), WatchUi.SLIDE_IMMEDIATE);
                             break;
+
+                        case Ant.MSG_CODE_EVENT_RX_SEARCH_TIMEOUT:
+                            System.println( "Response event: RX_SEARCH_TIMEOUT" );
+                            state = CLOSED; // Channel will automatically close
+                            reopen = true;  // Reopen channel when closed event is received
+                            break;
+
                         default:
                             handleUnexpectedAntEvent( eventCode );
                             break;
