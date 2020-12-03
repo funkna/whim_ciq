@@ -18,7 +18,7 @@ class SensorDetailsView extends WatchUi.View {
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorDetails(dc));
         current_view_id = VIEW_ID;
-        View.findDrawableById("sensor_name").setText("ID");
+        View.findDrawableById("sensor_name").setText("ID"); //TODO: Use a meaningful name.
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
     }
 
@@ -74,7 +74,44 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     function timerCallback() {
         mTimer.stop();
-        var menu = new WatchUi.Menu2( {:title => "ID"} );
+        WatchUi.switchToView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK);
+    }
+
+    function onKeyPressed(keyEvent) {
+        if(keyEvent.getKey() == KEY_UP) {
+            mTimer.start(method(:timerCallback), 400, true);
+            return true;
+        }
+        return false;
+    }
+
+    function onKeyReleased(keyEvent) {
+        if(keyEvent.getKey() == KEY_UP) {
+            mTimer.stop();
+            return true;
+        }
+        return false;
+    }
+
+
+    function onEnter() {
+        return false;
+    }
+
+    function onBack() {
+        return false;
+    }
+
+    function onNextPage() {
+        return false;
+    }
+
+    function onPreviousPage() {
+        return false;
+    }
+
+    private function initializeMenu() {
+        var menu = new WatchUi.Menu2( {:title => "ID"} ); //TODO: Use a meaningful name.
         menu.addItem(
             new WatchUi.MenuItem(
                 Rez.Strings.text_command_rename,
@@ -91,34 +128,7 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
                 null
             )
         );
-        WatchUi.switchToView(menu, new CommandMenuDelegate(), WatchUi.SLIDE_UP);
-    }
-
-    function onKey(keyEvent) {
-        System.println(keyEvent.getKey() + " - " +keyEvent.getType()); //TODO: Delete debug line
-
-        if(keyEvent.getKey() == KEY_UP) {
-            System.println("TODO: Hold this key to switch to command view.");
-            mTimer.start(method(:timerCallback), 400, true);
-            return true;
-        }
-        return false;
-    }
-
-    function onEnter() {
-        return false;
-    }
-
-    function onBack() {
-        return false;
-    }
-
-    function onNextPage() {
-        return false;
-    }
-
-    function onPreviousPage() {
-        return false;
+        return menu;
     }
 
 }
