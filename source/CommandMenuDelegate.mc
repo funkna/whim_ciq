@@ -19,7 +19,7 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
 
     function onBack() {
         var view = new SensorDetailsView();
-        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_DOWN);
+        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_BLINK);
         return true;
     }
 }
