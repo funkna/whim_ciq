@@ -6,7 +6,8 @@ var current_view_id;
 
 enum {
     PAIR,
-    DETAILS
+    DETAILS,
+    COMMANDS
 }
 
 class WHIMApp extends Application.AppBase {
