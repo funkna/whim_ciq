@@ -4,7 +4,7 @@ using Toybox.System;
 using Toybox.Timer;
 using Toybox.Lang;
 
-var impacts = 1;
+var impacts = 0;
 
 class SensorDetailsView extends WatchUi.View {
 
@@ -33,7 +33,7 @@ class SensorDetailsView extends WatchUi.View {
     function onUpdate(dc) {
         View.findDrawableById("impacts_field").setText(impacts.toString());
 
-        if (impacts > 0) {
+        if(impacts > 0) {
             View.findDrawableById("status").setColor(Graphics.COLOR_RED);
             View.findDrawableById("status").setText(Rez.Strings.text_status_urgent);
         }
@@ -65,20 +65,60 @@ class SensorDetailsView extends WatchUi.View {
 
 class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
+    var mTimer;
+
     function initialize(view) {
         WHIMBehaviorDelegate.initialize(view);
+        mTimer = new Timer.Timer();
+    }
+
+    function timerCallback() {
+        mTimer.stop();
+        var menu = new WatchUi.Menu2( {:title => "ID"} );
+        menu.addItem(
+            new WatchUi.MenuItem(
+                Rez.Strings.text_command_rename,
+                "",
+                Rez.Strings.text_id_rename,
+                null
+            )
+        );
+        menu.addItem(
+            new WatchUi.MenuItem(
+                Rez.Strings.text_command_erase,
+                "",
+                Rez.Strings.text_id_erase,
+                null
+            )
+        );
+        WatchUi.switchToView(menu, new CommandMenuDelegate(), WatchUi.SLIDE_UP);
+    }
+
+    function onKey(keyEvent) {
+        System.println(keyEvent.getKey() + " - " +keyEvent.getType()); //TODO: Delete debug line
+
+        if(keyEvent.getKey() == KEY_UP) {
+            System.println("TODO: Hold this key to switch to command view.");
+            mTimer.start(method(:timerCallback), 400, true);
+            return true;
+        }
+        return false;
     }
 
     function onEnter() {
-        return true;
+        return false;
+    }
+
+    function onBack() {
+        return false;
     }
 
     function onNextPage() {
-        return true;
+        return false;
     }
 
     function onPreviousPage() {
-        return true;
+        return false;
     }
 
 }
