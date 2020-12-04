@@ -29,9 +29,7 @@ class SensorPairView extends WatchUi.View {
         WatchUi.requestUpdate();
     }
 
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
+    // Called when this View is brought to the foreground.
     function onShow() {
         View.onShow();
         mTimer.start(method(:timerCallback), 500, true);
@@ -49,21 +47,10 @@ class SensorPairView extends WatchUi.View {
         View.onUpdate(dc);
     }
 
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
+    // Called when this View is removed from the screen.
     function onHide() {
         mTimer.stop();
     }
-
-    // The user has just looked at their watch. Timers and animations may be started here.
-    function onExitSleep() {
-    }
-
-    // Terminate any active timers and prepare for slow updates.
-    function onEnterSleep() {
-    }
-
 }
 
 class SensorPairDelegate extends WHIMBehaviorDelegate {
@@ -80,3 +67,4 @@ class SensorPairDelegate extends WHIMBehaviorDelegate {
     }
 
 }
+

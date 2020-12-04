@@ -1,7 +1,6 @@
 using Toybox.Application;
 using Toybox.WatchUi;
 
-var channel;
 var current_view_id;
 
 enum {
@@ -38,3 +37,4 @@ class WHIMApp extends Application.AppBase {
     }
 
 }
+

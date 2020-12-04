@@ -23,3 +23,4 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
         return true;
     }
 }
+
