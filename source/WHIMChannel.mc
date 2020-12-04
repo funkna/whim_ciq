@@ -160,3 +160,4 @@ class WHIMChannel extends Ant.GenericChannel
         WatchUi.requestUpdate();
     }
 }
+

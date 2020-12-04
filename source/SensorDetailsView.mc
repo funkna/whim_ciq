@@ -22,9 +22,7 @@ class SensorDetailsView extends WatchUi.View {
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
     }
 
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
+    // Called when this View is brought to the foreground.
     function onShow() {
         View.onShow();
     }
@@ -33,6 +31,7 @@ class SensorDetailsView extends WatchUi.View {
     function onUpdate(dc) {
         View.findDrawableById("impacts_field").setText(impacts.toString());
 
+        // TODO: Handle incoming data in a better manner.
         if(impacts > 0) {
             View.findDrawableById("status").setColor(Graphics.COLOR_RED);
             View.findDrawableById("status").setText(Rez.Strings.text_status_urgent);
@@ -46,22 +45,10 @@ class SensorDetailsView extends WatchUi.View {
         View.onUpdate(dc);
     }
 
-    // Called when this View is removed from the screen. Save the
-    // state of this View here. This includes freeing resources from
-    // memory.
+    // Called when this View is removed from the screen.
     function onHide() {
     }
-
-    // The user has just looked at their watch. Timers and animations may be started here.
-    function onExitSleep() {
-    }
-
-    // Terminate any active timers and prepare for slow updates.
-    function onEnterSleep() {
-    }
-
 }
-
 
 class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
@@ -74,12 +61,12 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     function timerCallback() {
         mTimer.stop();
-        WatchUi.switchToView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK);
+        WatchUi.switchToView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
     }
 
     function onKeyPressed(keyEvent) {
         if(keyEvent.getKey() == KEY_UP) {
-            mTimer.start(method(:timerCallback), 400, true);
+            mTimer.start(method(:timerCallback), 400, true); // Start the timer when the UP key is held
             return true;
         }
         return false;
@@ -87,26 +74,9 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     function onKeyReleased(keyEvent) {
         if(keyEvent.getKey() == KEY_UP) {
-            mTimer.stop();
+            mTimer.stop(); // Stop the timer if the UP key is released prematurely
             return true;
         }
-        return false;
-    }
-
-
-    function onEnter() {
-        return false;
-    }
-
-    function onBack() {
-        return false;
-    }
-
-    function onNextPage() {
-        return false;
-    }
-
-    function onPreviousPage() {
         return false;
     }
 
