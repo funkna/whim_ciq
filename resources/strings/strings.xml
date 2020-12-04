@@ -5,7 +5,7 @@
     <string id="text_waiting_for_message2">Looking for sensor..</string>
     <string id="text_waiting_for_message3">Looking for sensor...</string>
     <!-- SensorDetailsView Strings -->
-    <string id="text_impacts">Impacts:</string>
+    <string id="text_impacts">Impacts</string>
     <string id="text_status_safe">SAFE</string>
     <string id="text_status_urgent">DANGER</string>
     <!-- CommandMenu Strings -->

@@ -43,10 +43,18 @@ class SensorDetailsView extends WatchUi.View {
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
+        addViewDetails(dc);
     }
 
     // Called when this View is removed from the screen.
     function onHide() {
+    }
+
+    private function addViewDetails(dc) {
+        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
+        dc.drawLine(20, 80, 220, 80);
+        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
+        dc.drawLine(20, 160, 220, 160);
     }
 }
 
