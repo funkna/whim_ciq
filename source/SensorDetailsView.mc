@@ -100,9 +100,9 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
         );
         menu.addItem(
             new WatchUi.MenuItem(
-                Rez.Strings.text_command_erase,
+                Rez.Strings.text_command_reset_data,
                 "",
-                Rez.Strings.text_id_erase,
+                Rez.Strings.text_id_reset_data,
                 null
             )
         );

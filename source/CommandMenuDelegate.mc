@@ -12,8 +12,8 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
         var id = item.getId();
         if(id == Rez.Strings.text_id_rename) {
             System.println("Rename Command Placeholder");
-        } else if(id == Rez.Strings.text_id_erase) {
-            System.println("Erase Command Placeholder");
+        } else if(id == Rez.Strings.text_id_reset_data) {
+            System.println("Reset Data Command Placeholder");
         }
     }
 
