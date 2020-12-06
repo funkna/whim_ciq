@@ -82,7 +82,7 @@ class WHIMChannel extends Ant.GenericChannel
                 if (payload[0] == 0x01) {
                     System.println("Data Page 1 Received!");
 
-                    if (current_view_id == PAIR) {
+                    if (currentViewId == PAIR) {
                         System.println("View switched!");
                         var view = new SensorDetailsView();
                         WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_IMMEDIATE);
