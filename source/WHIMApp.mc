@@ -1,16 +1,15 @@
 using Toybox.Application;
 using Toybox.WatchUi;
 
-var current_view_id;
-
 enum {
     PAIR,
     DETAILS
 }
 
-class WHIMApp extends Application.AppBase {
+var currentViewId;
+var whimChannel;
 
-    var mChannel;
+class WHIMApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
@@ -19,15 +18,15 @@ class WHIMApp extends Application.AppBase {
     // onStart() is called on application start up
     function onStart(state) {
         // Create channel object and open it
-        mChannel = new WHIMChannel();
-        mChannel.open();
+        whimChannel = new WHIMChannel();
+        whimChannel.open();
     }
 
     // onStop() is called when your application is exiting
     function onStop(state) {
         // Close and release the channel
-        mChannel.close();
-        mChannel.release();
+        whimChannel.close();
+        whimChannel.release();
     }
 
     // Return the initial view of your application here
@@ -37,4 +36,3 @@ class WHIMApp extends Application.AppBase {
     }
 
 }
-

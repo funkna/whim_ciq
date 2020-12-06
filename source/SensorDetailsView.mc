@@ -17,7 +17,7 @@ class SensorDetailsView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorDetails(dc));
-        current_view_id = VIEW_ID;
+        currentViewId = VIEW_ID;
         View.findDrawableById("sensor_name").setText("ID"); //TODO: Use a meaningful name.
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
     }
