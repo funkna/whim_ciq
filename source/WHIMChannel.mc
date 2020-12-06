@@ -112,6 +112,15 @@ class WHIMChannel extends Ant.GenericChannel
                             System.println( "Response event: EVENT_TX" );
                             break;
 
+                        case Ant.MSG_CODE_EVENT_TRANSFER_TX_COMPLETED:
+                            System.println("Response event: TRANSFER_TX_COMPLETED");
+                            break;
+
+                        case Ant.MSG_CODE_EVENT_TRANSFER_TX_FAILED:
+                            System.println("Response event: TRANSFER_TX_FAILED");
+                            sendResetDataCommand();
+                            break;
+
                         case Ant.MSG_CODE_EVENT_CHANNEL_CLOSED:
                             System.println( "Response event: CHANNEL_CLOSED" );
                             checkChannelClosure();
@@ -159,5 +168,20 @@ class WHIMChannel extends Ant.GenericChannel
         System.println( "Unhandled ANT event: " + eventCode );
         WatchUi.requestUpdate();
     }
-}
 
+    function sendResetDataCommand() {
+        var data = new[8];
+        data[0] = 0x10;
+        data[1] = 0x00;
+        data[2] = 0xFF;
+        data[3] = 0xFF;
+        data[4] = 0xFF;
+        data[5] = 0xFF;
+        data[6] = 0xFF;
+        data[7] = 0xFF;
+
+        var message = new Ant.Message();
+        message.setPayload(data);
+        GenericChannel.sendAcknowledge(message);
+    }
+}

@@ -13,7 +13,7 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
         if(id == Rez.Strings.text_id_rename) {
             System.println("Rename Command Placeholder");
         } else if(id == Rez.Strings.text_id_reset_data) {
-            System.println("Reset Data Command Placeholder");
+            whimChannel.sendResetDataCommand();
         }
     }
 
