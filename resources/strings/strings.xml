@@ -4,9 +4,13 @@
     <string id="text_waiting_for_message1">Looking for sensor.</string>
     <string id="text_waiting_for_message2">Looking for sensor..</string>
     <string id="text_waiting_for_message3">Looking for sensor...</string>
-    <!-- SensorDetalsView Strings -->
-    <string id="text_sensor_name">SensorName</string>
-    <string id="text_impacts">Impacts:</string>
-    <string id="text_index">Index:</string>
-    
+    <!-- SensorDetailsView Strings -->
+    <string id="text_impacts">Impacts</string>
+    <string id="text_status_safe">SAFE</string>
+    <string id="text_status_urgent">DANGER</string>
+    <!-- CommandMenu Strings -->
+    <string id="text_command_rename">Rename Device</string>
+    <string id="text_id_rename">rename</string>
+    <string id="text_command_reset_data">Reset Data</string>
+    <string id="text_id_reset_data">reset_data</string>
 </strings>
