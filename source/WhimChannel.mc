@@ -8,7 +8,7 @@ enum {
     OPEN
 }
 
-class WHIMChannel extends Ant.GenericChannel
+class WhimChannel extends Ant.GenericChannel
 {
     const DEVICE_NUMBER = 0;
     const DEVICE_TYPE = 23;

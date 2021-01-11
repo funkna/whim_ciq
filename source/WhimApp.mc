@@ -9,7 +9,7 @@ enum {
 var currentViewId;
 var whimChannel;
 
-class WHIMApp extends Application.AppBase {
+class WhimApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
@@ -18,7 +18,7 @@ class WHIMApp extends Application.AppBase {
     // onStart() is called on application start up
     function onStart(state) {
         // Create channel object and open it
-        whimChannel = new WHIMChannel();
+        whimChannel = new WhimChannel();
         whimChannel.open();
     }
 
@@ -34,5 +34,4 @@ class WHIMApp extends Application.AppBase {
         var view = new SensorPairView();
         return [ view, new SensorPairDelegate(view) ];
     }
-
 }
