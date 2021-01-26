@@ -3,9 +3,9 @@ using Toybox.System;
 using Toybox.WatchUi;
 
 enum {
-    UNACQUIRED,
-    CLOSED,
-    OPEN
+    STATE_UNACQUIRED,
+    STATE_CLOSED,
+    STATE_OPEN
 }
 
 class WhimChannel extends Ant.GenericChannel
@@ -16,7 +16,7 @@ class WhimChannel extends Ant.GenericChannel
     const MSG_PERIOD = 8192;
     const FREQUENCY = 66;
 
-    var state = UNACQUIRED;
+    var state = STATE_UNACQUIRED;
     var reopen = false;
 
     function initialize() {
@@ -25,8 +25,8 @@ class WhimChannel extends Ant.GenericChannel
             var chanAssign = new Ant.ChannelAssignment(Ant.CHANNEL_TYPE_RX_NOT_TX, Ant.NETWORK_PUBLIC);
             GenericChannel.initialize(method(:onMessage), chanAssign);
 
-            // Channel has been acquired, set to CLOSED state
-            state = CLOSED;
+            // Channel has been acquired, set to STATE_CLOSED
+            state = STATE_CLOSED;
             // Set reopen flag to false on initialize
             reopen = false;
 
@@ -52,7 +52,7 @@ class WhimChannel extends Ant.GenericChannel
         // Attempt to open channel and handle accordingly
         if( GenericChannel.open() ) {
             System.println( "Channel opened" );
-            state = OPEN;
+            state = STATE_OPEN;
         }
         else {
             System.println( "ERROR: Unable to open channel" );
@@ -60,14 +60,14 @@ class WhimChannel extends Ant.GenericChannel
     }
 
     function close() {
-        state = CLOSED;
+        state = STATE_CLOSED;
         GenericChannel.close();
         System.println( "Channel closed" );
     }
 
     function release() {
         // Release channel if one has been acquired
-        if( state != UNACQUIRED ) {
+        if( state != STATE_UNACQUIRED ) {
             GenericChannel.release();
         }
     }
@@ -138,7 +138,7 @@ class WhimChannel extends Ant.GenericChannel
 
                         case Ant.MSG_CODE_EVENT_RX_SEARCH_TIMEOUT:
                             System.println( "Response event: RX_SEARCH_TIMEOUT" );
-                            state = CLOSED; // Channel will automatically close
+                            state = STATE_CLOSED; // Channel will automatically close
                             reopen = true;  // Reopen channel when closed event is received
                             break;
 
@@ -150,16 +150,16 @@ class WhimChannel extends Ant.GenericChannel
             }
         } catch ( ex ) {
             GenericChannel.close();
-            state = CLOSED;
+            state = STATE_CLOSED;
             System.println( "ERROR: Unexpected exception in Channel.onMessage()", ex );
             WatchUi.requestUpdate();
         }
     }
 
     function checkChannelClosure() {
-        if( CLOSED != state ) {
+        if( STATE_CLOSED != state ) {
             System.println( "ERROR: Channel closed unexpectedly" );
-            state = CLOSED;
+            state = STATE_CLOSED;
             WatchUi.requestUpdate();
         }
     }
