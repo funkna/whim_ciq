@@ -7,6 +7,7 @@ enum {
 }
 
 var currentViewId;
+var channelManager;
 var whimChannel;
 
 class WhimApp extends Application.AppBase {
@@ -17,16 +18,15 @@ class WhimApp extends Application.AppBase {
 
     // onStart() is called on application start up
     function onStart(state) {
-        // Create channel object and open it
-        whimChannel = new WhimChannel();
-        whimChannel.open();
+        // Create channel manager to acquire all available ANT channels
+        // and open one channel for search
+        channelManager = new ChannelManager();
     }
 
     // onStop() is called when your application is exiting
     function onStop(state) {
-        // Close and release the channel
-        whimChannel.close();
-        whimChannel.release();
+        // Close and release all ANT channels
+        channelManager.shutDown();
     }
 
     // Return the initial view of your application here
