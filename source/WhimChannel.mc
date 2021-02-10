@@ -76,6 +76,10 @@ class WhimChannel extends Ant.GenericChannel
         return state;
     }
 
+    function getDeviceNumber() {
+        return deviceNumber;
+    }
+
     function onMessage( msg ) {
         try {
             var payload = msg.getPayload();

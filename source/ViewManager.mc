@@ -27,9 +27,15 @@ class ViewManager
             currentViewIndex = 0;
             view = new SensorDetailsView(
                     deviceNumbers[currentViewIndex],
-                    impactCounts[currentViewIndex]
-                    );
+                    impactCounts[currentViewIndex],
+                    currentViewIndex,
+                    numOfConnectedSensors);
             WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_BLINK);
+        }
+        else
+        {
+            view.pairedDevices = numOfConnectedSensors;
+            WatchUi.requestUpdate();
         }
     }
 
@@ -64,8 +70,9 @@ class ViewManager
             }
             view = new SensorDetailsView(
                     deviceNumbers[currentViewIndex],
-                    impactCounts[currentViewIndex]
-                    );
+                    impactCounts[currentViewIndex],
+                    currentViewIndex,
+                    numOfConnectedSensors);
             WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_BLINK);
         }
     }
@@ -95,8 +102,9 @@ class ViewManager
         }
         view = new SensorDetailsView(
                 deviceNumbers[currentViewIndex],
-                impactCounts[currentViewIndex]
-                );
+                impactCounts[currentViewIndex],
+                currentViewIndex,
+                numOfConnectedSensors);
         WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_UP);
     }
 
@@ -108,8 +116,9 @@ class ViewManager
         currentViewIndex--;
         view = new SensorDetailsView(
                 deviceNumbers[currentViewIndex],
-                impactCounts[currentViewIndex]
-                );
+                impactCounts[currentViewIndex],
+                currentViewIndex,
+                numOfConnectedSensors);
         WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_DOWN);
     }
 

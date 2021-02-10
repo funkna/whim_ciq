@@ -4,7 +4,10 @@ using Toybox.WatchUi;
 
 class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
 
-    function initialize() {
+    var mDevId;
+
+    function initialize(devId) {
+        mDevId = devId;
         Menu2InputDelegate.initialize();
     }
 
@@ -13,7 +16,12 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
         if(id == Rez.Strings.text_id_rename) {
             System.println("Rename Command Placeholder");
         } else if(id == Rez.Strings.text_id_reset_data) {
-            // whimChannel.sendResetDataCommand();
+            if(channelManager.sendResetDataCommand(mDevId)) {
+                System.println("Reset command sent");
+            }
+            else {
+                System.println("ERROR: Failed to send reset command.");
+            }
         }
     }
 
