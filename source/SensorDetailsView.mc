@@ -6,14 +6,26 @@ using Toybox.Lang;
 
 class SensorDetailsView extends WatchUi.View {
 
+    const INDICATOR_X_POSITIONS = [15, 12, 10, 9, 9, 10, 12, 15];
+    const INDICATOR_Y_POSITIONS = [85, 95, 105, 115, 125, 135, 145, 155];
+    const BASE_INDICATOR_SIZE = 3;
+    const SELECTION_INDICATOR_SIZE = 5;
+    const BASE_COLOR = Graphics.COLOR_LT_GRAY;
+    const ALERT_COLOR = Graphics.COLOR_RED;
+    const SELECTION_COLOR = Graphics.COLOR_BLACK;
+
     const VIEW_ID = DETAILS;
 
     var deviceNumber;
     var impactCount;
+    var selectedIndex;
+    var pairedDevices;
 
-    function initialize( aDeviceNumber, aImpactCount ) {
+    function initialize( aDeviceNumber, aImpactCount, aSelectedIndex, aPairedDevices ) {
         deviceNumber = aDeviceNumber;
         impactCount = aImpactCount;
+        selectedIndex = aSelectedIndex;
+        pairedDevices = aPairedDevices;
         View.initialize();
     }
 
@@ -46,18 +58,33 @@ class SensorDetailsView extends WatchUi.View {
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
-        addViewDetails(dc);
+        drawViewDetails(dc);
+        drawDeviceIndicators(dc);
     }
 
     // Called when this View is removed from the screen.
     function onHide() {
     }
 
-    private function addViewDetails(dc) {
+    private function drawViewDetails(dc) {
         dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
         dc.drawLine(20, 80, 220, 80);
         dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
         dc.drawLine(20, 160, 220, 160);
+    }
+
+    private function drawDeviceIndicators(dc) {
+        for(var i = 0; i < pairedDevices; i++)
+        {
+            dc.setColor(BASE_COLOR, BASE_COLOR);
+            dc.fillCircle(INDICATOR_X_POSITIONS[i], INDICATOR_Y_POSITIONS[i], BASE_INDICATOR_SIZE);
+
+            if (i == selectedIndex)
+            {
+                dc.setColor(SELECTION_COLOR, SELECTION_COLOR);
+                dc.drawCircle(INDICATOR_X_POSITIONS[i], INDICATOR_Y_POSITIONS[i], SELECTION_INDICATOR_SIZE);
+            }
+        }
     }
 
     function setImpactCount( aImpactCount ) {
@@ -68,15 +95,17 @@ class SensorDetailsView extends WatchUi.View {
 class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     var mTimer;
+    var mView;
 
     function initialize(view) {
         WHIMBehaviorDelegate.initialize(view);
+        mView = view;
         mTimer = new Timer.Timer();
     }
 
     function timerCallback() {
         mTimer.stop();
-        WatchUi.pushView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
+        WatchUi.pushView(initializeMenu(mView.deviceNumber), new CommandMenuDelegate(mView.deviceNumber), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
     }
 
     function onKeyPressed(keyEvent) {
@@ -100,8 +129,8 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
         return false;
     }
 
-    private function initializeMenu() {
-        var menu = new WatchUi.Menu2( {:title => "ID"} ); //TODO: Use a meaningful name.
+    private function initializeMenu(aDeviceId) {
+        var menu = new WatchUi.Menu2( {:title => aDeviceId.toString()} ); //TODO: Use a meaningful name.
         menu.addItem(
             new WatchUi.MenuItem(
                 Rez.Strings.text_command_rename,

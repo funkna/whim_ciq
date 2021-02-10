@@ -84,4 +84,14 @@ class ChannelManager
         }
     }
 
+
+    function sendResetDataCommand(id) {
+        for( var i = 0; i < MAX_CHANNELS; i++ ) {
+            if( id == channels[i].getDeviceNumber() ){
+                channels[i].sendResetDataCommand();
+                return true;
+            }
+        }
+        return false;
+    }
 }
