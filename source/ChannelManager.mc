@@ -17,10 +17,18 @@ class ChannelManager
 
     function shutDown()
     {
+        var state;
+
         // Close and release all channels
         for( var i = 0; i < 8; i++ ) {
-            channels[i].close();
-            channels[i].release();
+            state = channels[i].getState();
+            if (state == STATE_PAIRED || state == STATE_SEARCHING) {
+                channels[i].close();
+                channels[i].release();
+            }
+            else if (state == STATE_CLOSED) {
+                channels[i].release();
+            }
         }
     }
 

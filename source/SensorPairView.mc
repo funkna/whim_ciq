@@ -21,7 +21,6 @@ class SensorPairView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorPair(dc));
-        currentViewId = VIEW_ID;
         View.findDrawableById("title").setText(Rez.Strings.AppName);
     }
 

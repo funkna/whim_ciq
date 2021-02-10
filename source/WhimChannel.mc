@@ -18,6 +18,8 @@ class WhimChannel extends Ant.GenericChannel
     const FREQUENCY = 66;
 
     var state = STATE_UNACQUIRED;
+    var deviceNumber = 0;
+    var impactCount = 0;
 
     function initialize() {
         try {
@@ -83,20 +85,20 @@ class WhimChannel extends Ant.GenericChannel
                 // Handle Data Page 1
                 if (payload[0] == 0x01) {
                     System.println( GenericChannel.getDeviceConfig().deviceNumber + ": Data Page 1 Received!" );
+                    deviceNumber = GenericChannel.getDeviceConfig().deviceNumber;
 
                     if (STATE_SEARCHING == state) {
                         state = STATE_PAIRED;
                         channelManager.openSearchChannel();
                         // Swich to sensor details view - TODO: Update UI for multisensor
                         System.println(GenericChannel.getDeviceConfig().deviceNumber + ": View switched!");
-                        var view = new SensorDetailsView();
-                        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_IMMEDIATE);
+                        viewManager.addSensor(deviceNumber, impactCount);
                     }
 
-                    if (impacts != payload[1]) {
+                    if (impactCount != payload[1]) {
                         System.println( GenericChannel.getDeviceConfig().deviceNumber + ": New Data!" );
-                        impacts = payload[1];
-                        WatchUi.requestUpdate();
+                        impactCount = payload[1];
+                        viewManager.updateImpactCount( deviceNumber, impactCount );
                     }
                 }
                 else {
@@ -138,8 +140,7 @@ class WhimChannel extends Ant.GenericChannel
                             state = STATE_SEARCHING;
                             resetDeviceConfig();
                             // Switch to sensor pair view - TODO: Update UI for multisensor
-                            var view = new SensorPairView();
-                            WatchUi.switchToView(view, new SensorPairDelegate(view), WatchUi.SLIDE_IMMEDIATE);
+                            viewManager.deleteSensor(deviceNumber);
                             break;
 
                         case Ant.MSG_CODE_EVENT_RX_SEARCH_TIMEOUT:

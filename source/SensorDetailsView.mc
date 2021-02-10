@@ -4,20 +4,22 @@ using Toybox.System;
 using Toybox.Timer;
 using Toybox.Lang;
 
-var impacts = 0;
-
 class SensorDetailsView extends WatchUi.View {
 
     const VIEW_ID = DETAILS;
 
-    function initialize() {
+    var deviceNumber;
+    var impactCount;
+
+    function initialize( aDeviceNumber, aImpactCount ) {
+        deviceNumber = aDeviceNumber;
+        impactCount = aImpactCount;
         View.initialize();
     }
 
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorDetails(dc));
-        currentViewId = VIEW_ID;
         View.findDrawableById("sensor_name").setText("ID"); //TODO: Use a meaningful name.
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
     }
@@ -29,10 +31,11 @@ class SensorDetailsView extends WatchUi.View {
 
     // Update the view
     function onUpdate(dc) {
-        View.findDrawableById("impacts_field").setText(impacts.toString());
+        View.findDrawableById("impacts_field").setText(impactCount.toString());
+        View.findDrawableById("sensor_name").setText(deviceNumber.toString());
 
         // TODO: Handle incoming data in a better manner.
-        if(impacts > 0) {
+        if(impactCount > 0) {
             View.findDrawableById("status").setColor(Graphics.COLOR_RED);
             View.findDrawableById("status").setText(Rez.Strings.text_status_urgent);
         }
@@ -56,6 +59,10 @@ class SensorDetailsView extends WatchUi.View {
         dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
         dc.drawLine(20, 160, 220, 160);
     }
+
+    function setImpactCount( aImpactCount ) {
+        impactCount = aImpactCount;
+    }
 }
 
 class SensorDetailsDelegate extends WHIMBehaviorDelegate {
@@ -69,7 +76,7 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     function timerCallback() {
         mTimer.stop();
-        WatchUi.switchToView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
+        WatchUi.pushView(initializeMenu(), new CommandMenuDelegate(), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
     }
 
     function onKeyPressed(keyEvent) {
@@ -77,12 +84,17 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
             mTimer.start(method(:timerCallback), 400, true); // Start the timer when the UP key is held
             return true;
         }
+        else if(keyEvent.getKey() == KEY_DOWN ) {
+            viewManager.nextSensor();
+            return true;
+        }
         return false;
     }
 
     function onKeyReleased(keyEvent) {
         if(keyEvent.getKey() == KEY_UP) {
-            mTimer.stop(); // Stop the timer if the UP key is released prematurely
+            mTimer.stop(); // Stop the timer
+            viewManager.previousSensor(); // Display previous sensor info
             return true;
         }
         return false;

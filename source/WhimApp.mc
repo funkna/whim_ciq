@@ -6,9 +6,8 @@ enum {
     DETAILS
 }
 
-var currentViewId;
 var channelManager;
-var whimChannel;
+var viewManager;
 
 class WhimApp extends Application.AppBase {
 
@@ -21,6 +20,8 @@ class WhimApp extends Application.AppBase {
         // Create channel manager to acquire all available ANT channels
         // and open one channel for search
         channelManager = new ChannelManager();
+        // Initialize view manager
+        viewManager = new ViewManager();
     }
 
     // onStop() is called when your application is exiting
