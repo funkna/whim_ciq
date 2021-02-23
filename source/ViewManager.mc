@@ -97,7 +97,10 @@ class ViewManager
     // Go to next sensor
     function nextSensor() {
         currentViewIndex++;
-        if (currentViewIndex == numOfConnectedSensors) {
+        if (numOfConnectedSensors == 1) {
+            return;
+        }
+        else if (currentViewIndex == numOfConnectedSensors) {
             currentViewIndex = 0;
         }
         view = new SensorDetailsView(
@@ -110,7 +113,10 @@ class ViewManager
 
     // Go to previous sensor
     function previousSensor() {
-        if (currentViewIndex == 0) {
+        if (numOfConnectedSensors == 1) {
+            return;
+        }
+        else if (currentViewIndex == 0) {
             currentViewIndex = numOfConnectedSensors;
         }
         currentViewIndex--;
