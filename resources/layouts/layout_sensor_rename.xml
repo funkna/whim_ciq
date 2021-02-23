@@ -1,0 +1,17 @@
+<resources>
+    <layouts>
+        <layout id="SensorRename">
+            <drawable id="background"/> 
+            <label id="c1" x="80" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c2" x="100" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c3" x="120" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c4" x="140" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c5" x="160" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c1_select" x="80" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c2_select" x="100" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c3_select" x="120" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c4_select" x="140" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c5_select" x="160" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+        </layout>
+    </layouts>
+</resources>
