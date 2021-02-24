@@ -14,7 +14,6 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
     function onSelect(item) {
         var id = item.getId();
         if(id == Rez.Strings.text_id_rename) {
-            System.println("Rename Command Placeholder");
             var view = new SensorRenameView(mDevId);
             WatchUi.pushView(view, new SensorRenameDelegate(view), WatchUi.SLIDE_BLINK);
 

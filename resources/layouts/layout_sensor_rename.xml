@@ -2,11 +2,25 @@
     <layouts>
         <layout id="SensorRename">
             <drawable id="background"/> 
+            <!-- Current in-place chars -->
             <label id="c1" x="80" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c2" x="100" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c3" x="120" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c4" x="140" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c5" x="160" y="100" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <!-- Scroll up chars --> 
+            <label id="c1_up" x="80" y="75" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c2_up" x="100" y="75" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c3_up" x="120" y="75" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c4_up" x="140" y="75" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c5_up" x="160" y="75" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <!-- Scroll down chars -->
+            <label id="c1_down" x="80" y="135" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c2_down" x="100" y="135" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c3_down" x="120" y="135" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c4_down" x="140" y="135" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="c5_down" x="160" y="135" font="Gfx.FONT_SMALL" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <!-- Chars for blinking underscore -->
             <label id="c1_select" x="80" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c2_select" x="100" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="c3_select" x="120" y="105" font="Gfx.FONT_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />

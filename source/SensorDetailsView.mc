@@ -3,6 +3,7 @@ using Toybox.Graphics;
 using Toybox.System;
 using Toybox.Timer;
 using Toybox.Lang;
+using Toybox.Application;
 
 class SensorDetailsView extends WatchUi.View {
 
@@ -20,6 +21,7 @@ class SensorDetailsView extends WatchUi.View {
     var impactCount;
     var selectedIndex;
     var pairedDevices;
+    var displayId;
 
     function initialize( aDeviceNumber, aImpactCount, aSelectedIndex, aPairedDevices ) {
         deviceNumber = aDeviceNumber;
@@ -38,13 +40,22 @@ class SensorDetailsView extends WatchUi.View {
 
     // Called when this View is brought to the foreground.
     function onShow() {
+        var stored_display_id = Application.Storage.getValue(deviceNumber);
+        if(stored_display_id == null)
+        {
+            displayId = deviceNumber.toString();
+        }
+        else
+        {
+            displayId = stored_display_id;
+        }
         View.onShow();
     }
 
     // Update the view
     function onUpdate(dc) {
         View.findDrawableById("impacts_field").setText(impactCount.toString());
-        View.findDrawableById("sensor_name").setText(deviceNumber.toString());
+        View.findDrawableById("sensor_name").setText(displayId.toString());
 
         // TODO: Handle incoming data in a better manner.
         if(impactCount > 0) {
@@ -105,7 +116,7 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
 
     function timerCallback() {
         mTimer.stop();
-        WatchUi.pushView(initializeMenu(mView.deviceNumber), new CommandMenuDelegate(mView.deviceNumber), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
+        WatchUi.pushView(initializeMenu(mView.displayId), new CommandMenuDelegate(mView.deviceNumber), WatchUi.SLIDE_BLINK); // Switch views if the UP key is held long enough
     }
 
     function onKeyPressed(keyEvent) {
@@ -129,8 +140,8 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
         return false;
     }
 
-    private function initializeMenu(aDeviceId) {
-        var menu = new WatchUi.Menu2( {:title => aDeviceId.toString()} ); //TODO: Use a meaningful name.
+    private function initializeMenu(aDisplayId) {
+        var menu = new WatchUi.Menu2( {:title => aDisplayId} ); //TODO: Use a meaningful name.
         menu.addItem(
             new WatchUi.MenuItem(
                 Rez.Strings.text_command_rename,
