@@ -24,6 +24,7 @@ class CommandMenuDelegate extends WatchUi.Menu2InputDelegate {
             else {
                 System.println("ERROR: Failed to send reset command.");
             }
+            WatchUi.popView(WatchUi.SLIDE_BLINK);
         }
     }
 

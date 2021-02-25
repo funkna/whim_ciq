@@ -6,6 +6,8 @@ class ViewManager
 
     var deviceNumbers = new [MAX_SENSORS];
     var impactCounts = new[MAX_SENSORS];
+    var largestHics = new[MAX_SENSORS];
+    var latestHics = new[MAX_SENSORS];
     var currentViewIndex = -1;
     var numOfConnectedSensors = 0;
     var view;
@@ -14,6 +16,8 @@ class ViewManager
         for( var i = 0; i < MAX_SENSORS; i++ ) {
             deviceNumbers[i] = -1;
             impactCounts[i] = -1;
+            largestHics[i] = -1;
+            latestHics[i] = -1;
         }
     }
 
@@ -28,6 +32,8 @@ class ViewManager
             view = new SensorDetailsView(
                     deviceNumbers[currentViewIndex],
                     impactCounts[currentViewIndex],
+                    largestHics[currentViewIndex],
+                    latestHics[currentViewIndex],
                     currentViewIndex,
                     numOfConnectedSensors);
             WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_BLINK);
@@ -51,9 +57,11 @@ class ViewManager
         }
 
         // Overwrite sensor and compress array
-        for( var i = indexToDelete; i < numOfConnectedSensors; i++ ) {
+        for( var i = indexToDelete; i < numOfConnectedSensors - 1; i++ ) {
             deviceNumbers[i] = deviceNumbers[i+1];
             impactCounts[i] = impactCounts[i+1];
+            largestHics[i] = largestHics[i+1];
+            latestHics[i] = latestHics[i+1];
         }
 
         // Decrement number of connected sensors
@@ -71,6 +79,8 @@ class ViewManager
             view = new SensorDetailsView(
                     deviceNumbers[currentViewIndex],
                     impactCounts[currentViewIndex],
+                    largestHics[currentViewIndex],
+                    latestHics[currentViewIndex],
                     currentViewIndex,
                     numOfConnectedSensors);
             WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_BLINK);
@@ -94,6 +104,40 @@ class ViewManager
         WatchUi.requestUpdate();
     }
 
+    // Update largest HIC for a sensor
+    function updateLargestHic(deviceNumber, largestHic) {
+        var sensorIndex;
+        for( var i = 0; i < numOfConnectedSensors; i++ ) {
+
+            if (deviceNumbers[i] == deviceNumber) {
+                largestHics[i] = largestHic;
+                if (currentViewIndex == i) {
+                    view.setLargestHic( largestHic );
+                }
+                break;
+            }
+
+        }
+        WatchUi.requestUpdate();
+    }
+
+    // Update latest HIC for a sensor
+    function updateLatestHic(deviceNumber, latestHic) {
+        var sensorIndex;
+        for( var i = 0; i < numOfConnectedSensors; i++ ) {
+
+            if (deviceNumbers[i] == deviceNumber) {
+                latestHics[i] = latestHic;
+                if (currentViewIndex == i) {
+                    view.setLatestHic( latestHic );
+                }
+                break;
+            }
+
+        }
+        WatchUi.requestUpdate();
+    }
+
     // Go to next sensor
     function nextSensor() {
         currentViewIndex++;
@@ -106,6 +150,8 @@ class ViewManager
         view = new SensorDetailsView(
                 deviceNumbers[currentViewIndex],
                 impactCounts[currentViewIndex],
+                largestHics[currentViewIndex],
+                latestHics[currentViewIndex],
                 currentViewIndex,
                 numOfConnectedSensors);
         WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_UP);
@@ -123,6 +169,8 @@ class ViewManager
         view = new SensorDetailsView(
                 deviceNumbers[currentViewIndex],
                 impactCounts[currentViewIndex],
+                largestHics[currentViewIndex],
+                latestHics[currentViewIndex],
                 currentViewIndex,
                 numOfConnectedSensors);
         WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_DOWN);
