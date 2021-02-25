@@ -18,14 +18,16 @@ class SensorDetailsView extends WatchUi.View {
     const VIEW_ID = DETAILS;
 
     var deviceNumber;
-    var impactCount;
+    var largestHic, latestHic, impactCount;
     var selectedIndex;
     var pairedDevices;
-    var displayId;
+    var displayId, displayIdCleaned;
 
-    function initialize( aDeviceNumber, aImpactCount, aSelectedIndex, aPairedDevices ) {
+    function initialize( aDeviceNumber, aImpactCount, aLargestHic, aLatestHic, aSelectedIndex, aPairedDevices ) {
         deviceNumber = aDeviceNumber;
         impactCount = aImpactCount;
+        largestHic = aLargestHic;
+        latestHic = aLatestHic;
         selectedIndex = aSelectedIndex;
         pairedDevices = aPairedDevices;
         View.initialize();
@@ -34,8 +36,10 @@ class SensorDetailsView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorDetails(dc));
-        View.findDrawableById("sensor_name").setText("ID"); //TODO: Use a meaningful name.
+        View.findDrawableById("sensor").setText(Rez.Strings.text_sensor_id);
         View.findDrawableById("impacts").setText(Rez.Strings.text_impacts);
+        View.findDrawableById("largest_hic").setText(Rez.Strings.text_largest_hic);
+        View.findDrawableById("latest_hic").setText(Rez.Strings.text_latest_hic);
     }
 
     // Called when this View is brought to the foreground.
@@ -49,23 +53,17 @@ class SensorDetailsView extends WatchUi.View {
         {
             displayId = stored_display_id;
         }
+        displayIdCleaned = trimTrailingWhitespace(displayId);
         View.onShow();
     }
 
     // Update the view
     function onUpdate(dc) {
         View.findDrawableById("impacts_field").setText(impactCount.toString());
-        View.findDrawableById("sensor_name").setText(displayId.toString());
+        View.findDrawableById("sensor_field").setText(displayIdCleaned.toString());
 
-        // TODO: Handle incoming data in a better manner.
-        if(impactCount > 0) {
-            View.findDrawableById("status").setColor(Graphics.COLOR_RED);
-            View.findDrawableById("status").setText(Rez.Strings.text_status_urgent);
-        }
-        else {
-            View.findDrawableById("status").setColor(Graphics.COLOR_GREEN);
-            View.findDrawableById("status").setText(Rez.Strings.text_status_safe);
-        }
+        View.findDrawableById("largest_hic_field").setText(largestHic.toString());
+        View.findDrawableById("latest_hic_field").setText(latestHic.toString());
 
         // Call the parent onUpdate function to redraw the layout
         View.onUpdate(dc);
@@ -82,6 +80,8 @@ class SensorDetailsView extends WatchUi.View {
         dc.drawLine(20, 80, 220, 80);
         dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
         dc.drawLine(20, 160, 220, 160);
+        dc.setColor(Graphics.COLOR_DK_RED, Graphics.COLOR_DK_RED);
+        dc.drawLine(120, 80, 120, 160);
     }
 
     private function drawDeviceIndicators(dc) {
@@ -100,6 +100,29 @@ class SensorDetailsView extends WatchUi.View {
 
     function setImpactCount( aImpactCount ) {
         impactCount = aImpactCount;
+    }
+
+    function setLargestHic( aLargestHic ) {
+        largestHic = aLargestHic;
+    }
+
+    function setLatestHic( aLatestHic ) {
+        latestHic = aLatestHic;
+    }
+
+    function trimTrailingWhitespace( aString ) {
+        var str_char_arr = aString.toCharArray();
+        var index_to_trim = str_char_arr.size();
+        for(var i = str_char_arr.size() - 1; i > 0; i--) {
+            if(str_char_arr[i] == ' ') {
+                index_to_trim = i;
+            }
+            else
+            {
+                break;
+            }
+        }
+        return aString.substring(0, index_to_trim);
     }
 }
 

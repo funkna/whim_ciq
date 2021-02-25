@@ -20,6 +20,8 @@ class WhimChannel extends Ant.GenericChannel
     var state = STATE_UNACQUIRED;
     var deviceNumber = 0;
     var impactCount = 0;
+    var largestHic = -1;
+    var latestHic = -1;
 
     function initialize() {
         try {
@@ -103,6 +105,19 @@ class WhimChannel extends Ant.GenericChannel
                         System.println( GenericChannel.getDeviceConfig().deviceNumber + ": New Data!" );
                         impactCount = payload[1];
                         viewManager.updateImpactCount( deviceNumber, impactCount );
+                    }
+
+                    if (largestHic != ( (payload[2] << 8) | (payload[3]) )) {
+                        System.println( GenericChannel.getDeviceConfig().deviceNumber + ": New Data!" );
+                        largestHic = (payload[2] << 8) | (payload[3]);
+                        System.println(largestHic);
+                        viewManager.updateLargestHic( deviceNumber, largestHic );
+                    }
+
+                    if (latestHic !=  ( (payload[4] << 8) | (payload[5]) )) {
+                        System.println( GenericChannel.getDeviceConfig().deviceNumber + ": New Data!" );
+                        latestHic = (payload[4] << 8) | (payload[5]);
+                        viewManager.updateLatestHic( deviceNumber, latestHic );
                     }
                 }
                 else {

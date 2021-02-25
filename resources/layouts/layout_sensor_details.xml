@@ -2,7 +2,12 @@
     <layouts>
         <layout id="SensorDetails">
             <drawable id="background" />
-            <label id="sensor_name" x="120" y="20" font="Gfx.FONT_MEDIUM" color="Gfx.COLOR_DK_BLUE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="sensor" x="120" y="10" font="Gfx.FONT_XTINY" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="sensor_field" x="120" y="30" font="Gfx.FONT_MEDIUM" color="Gfx.COLOR_DK_BLUE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="largest_hic" x="70" y="85" font="Gfx.FONT_XTINY" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="latest_hic" x="170" y="85" font="Gfx.FONT_XTINY" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="largest_hic_field" x="70" y="110" font="Gfx.FONT_SYSTEM_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+            <label id="latest_hic_field" x="170" y="110" font="Gfx.FONT_SYSTEM_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="status" x="120" y="100" font="Gfx.FONT_SYSTEM_LARGE" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="impacts" x="120" y="165" font="Gfx.FONT_XTINY" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
             <label id="impacts_field" x="120" y="185" font="Gfx.FONT_MEDIUM" color="Gfx.COLOR_BLACK" justification="Gfx.TEXT_JUSTIFY_CENTER" />
