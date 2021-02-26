@@ -57,13 +57,5 @@ class SensorPairDelegate extends WHIMBehaviorDelegate {
     function initialize(view) {
         WHIMBehaviorDelegate.initialize(view);
     }
-
-    function onKey(keyEvent) {
-        //TODO: Remove this test key to switch views without an ANT connection.
-        var view = new SensorDetailsView();
-        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_IMMEDIATE);
-        return true;
-    }
-
 }
 
