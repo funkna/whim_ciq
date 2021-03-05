@@ -56,6 +56,11 @@ class ViewManager
             }
         }
 
+        if( indexToDelete == -1 )
+        {
+            return;
+        }
+
         // Overwrite sensor and compress array
         for( var i = indexToDelete; i < numOfConnectedSensors - 1; i++ ) {
             deviceNumbers[i] = deviceNumbers[i+1];

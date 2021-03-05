@@ -4,13 +4,14 @@ using Toybox.System;
 using Toybox.Timer;
 using Toybox.Lang;
 using Toybox.Application;
+using Toybox.Math;
 
 class SensorDetailsView extends WatchUi.View {
 
-    const INDICATOR_X_POSITIONS = [15, 12, 10, 9, 9, 10, 12, 15];
-    const INDICATOR_Y_POSITIONS = [85, 95, 105, 115, 125, 135, 145, 155];
-    const BASE_INDICATOR_SIZE = 3;
-    const SELECTION_INDICATOR_SIZE = 5;
+    const INDICATOR_X_REF = 10; //Desired space from left edge of screen
+    const INDICATOR_ZONE_RADIUS = 110; //Center point (120) of screen minus the X_REF
+    const INDICATOR_ZONE_ANGLE_RADIANS = Math.acos((INDICATOR_ZONE_RADIUS-INDICATOR_X_REF).toFloat()/INDICATOR_ZONE_RADIUS);
+    const INDICATOR_SIZE_MAX = 7;
     const BASE_COLOR = Graphics.COLOR_LT_GRAY;
     const ALERT_COLOR = Graphics.COLOR_RED;
     const SELECTION_COLOR = Graphics.COLOR_BLACK;
@@ -85,15 +86,22 @@ class SensorDetailsView extends WatchUi.View {
     }
 
     private function drawDeviceIndicators(dc) {
+        var y_pos = 0, x_pos = 0;
+        var indicator_size = INDICATOR_SIZE_MAX-(pairedDevices.toFloat()/2);
+        var indicator_spacing_angle = INDICATOR_ZONE_ANGLE_RADIANS/(pairedDevices+1);
+
         for(var i = 0; i < pairedDevices; i++)
         {
+            x_pos = 120 - (INDICATOR_ZONE_RADIUS * Math.cos(INDICATOR_ZONE_ANGLE_RADIANS - 2*((i+1) * indicator_spacing_angle)));
+            y_pos = 120 - (INDICATOR_ZONE_RADIUS * Math.sin(INDICATOR_ZONE_ANGLE_RADIANS - 2*((i+1) * indicator_spacing_angle)));
+
             dc.setColor(BASE_COLOR, BASE_COLOR);
-            dc.fillCircle(INDICATOR_X_POSITIONS[i], INDICATOR_Y_POSITIONS[i], BASE_INDICATOR_SIZE);
+            dc.fillCircle(x_pos, y_pos, indicator_size);
 
             if (i == selectedIndex)
             {
                 dc.setColor(SELECTION_COLOR, SELECTION_COLOR);
-                dc.drawCircle(INDICATOR_X_POSITIONS[i], INDICATOR_Y_POSITIONS[i], SELECTION_INDICATOR_SIZE);
+                dc.drawCircle(x_pos, y_pos, indicator_size+2);
             }
         }
     }
