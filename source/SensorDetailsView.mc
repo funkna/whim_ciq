@@ -12,7 +12,7 @@ class SensorDetailsView extends WatchUi.View {
     const INDICATOR_ZONE_RADIUS = 110; //Center point (120) of screen minus the X_REF
     const INDICATOR_ZONE_ANGLE_RADIANS = Math.acos((INDICATOR_ZONE_RADIUS-INDICATOR_X_REF).toFloat()/INDICATOR_ZONE_RADIUS);
     const INDICATOR_SIZE_MAX = 7;
-    const BASE_COLOR = Graphics.COLOR_LT_GRAY;
+    const BASE_COLOR = Graphics.COLOR_DK_GRAY;
     const ALERT_COLOR = Graphics.COLOR_RED;
     const SELECTION_COLOR = Graphics.COLOR_BLACK;
 
@@ -101,7 +101,7 @@ class SensorDetailsView extends WatchUi.View {
             if (i == selectedIndex)
             {
                 dc.setColor(SELECTION_COLOR, SELECTION_COLOR);
-                dc.drawCircle(x_pos, y_pos, indicator_size+2);
+                dc.drawCircle(x_pos, y_pos, indicator_size+3);
             }
         }
     }
