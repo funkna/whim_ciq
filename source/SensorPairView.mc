@@ -7,8 +7,6 @@ using Toybox.Communications;
 
 class SensorPairView extends WatchUi.View {
 
-    const VIEW_ID = PAIR;
-
     hidden var mCounter, mMessages, mTimer;
 
     function initialize() {
@@ -52,10 +50,15 @@ class SensorPairView extends WatchUi.View {
     }
 }
 
-class SensorPairDelegate extends WHIMBehaviorDelegate {
+class SensorPairDelegate extends WatchUi.BehaviorDelegate {
 
-    function initialize(view) {
-        WHIMBehaviorDelegate.initialize(view);
+    function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
+    function onBack() {
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        return true;
     }
 }
 

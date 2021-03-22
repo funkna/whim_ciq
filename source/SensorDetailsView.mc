@@ -16,8 +16,6 @@ class SensorDetailsView extends WatchUi.View {
     const ALERT_COLOR = Graphics.COLOR_RED;
     const SELECTION_COLOR = Graphics.COLOR_BLACK;
 
-    const VIEW_ID = DETAILS;
-
     var deviceNumber;
     var largestHic, latestHic, impactCount;
     var selectedIndex;
@@ -95,7 +93,15 @@ class SensorDetailsView extends WatchUi.View {
             x_pos = 120 - (INDICATOR_ZONE_RADIUS * Math.cos(INDICATOR_ZONE_ANGLE_RADIANS - 2*((i+1) * indicator_spacing_angle)));
             y_pos = 120 - (INDICATOR_ZONE_RADIUS * Math.sin(INDICATOR_ZONE_ANGLE_RADIANS - 2*((i+1) * indicator_spacing_angle)));
 
-            dc.setColor(BASE_COLOR, BASE_COLOR);
+            if(viewManager.largestHics[i] >= 500) //TODO: verify this (?)
+            {
+                dc.setColor(ALERT_COLOR, ALERT_COLOR);
+            }
+            else
+            {
+                dc.setColor(BASE_COLOR, BASE_COLOR);
+            }
+
             dc.fillCircle(x_pos, y_pos, indicator_size);
 
             if (i == selectedIndex)
@@ -134,13 +140,13 @@ class SensorDetailsView extends WatchUi.View {
     }
 }
 
-class SensorDetailsDelegate extends WHIMBehaviorDelegate {
+class SensorDetailsDelegate extends WatchUi.BehaviorDelegate {
 
     var mTimer;
     var mView;
 
     function initialize(view) {
-        WHIMBehaviorDelegate.initialize(view);
+        BehaviorDelegate.initialize();
         mView = view;
         mTimer = new Timer.Timer();
     }
@@ -192,5 +198,10 @@ class SensorDetailsDelegate extends WHIMBehaviorDelegate {
         return menu;
     }
 
+
+    function onBack() {
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
+        return true;
+    }
 }
 

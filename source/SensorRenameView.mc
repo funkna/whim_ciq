@@ -194,12 +194,12 @@ class SensorRenameView extends WatchUi.View {
     }
 }
 
-class SensorRenameDelegate extends WHIMBehaviorDelegate {
+class SensorRenameDelegate extends  WatchUi.BehaviorDelegate  {
 
     var mView;
 
     function initialize(view) {
-        WHIMBehaviorDelegate.initialize(view);
+        BehaviorDelegate.initialize(view);
         mView = view;
     }
 

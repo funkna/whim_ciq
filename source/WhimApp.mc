@@ -1,10 +1,6 @@
 using Toybox.Application;
 using Toybox.WatchUi;
 
-enum {
-    PAIR,
-    DETAILS
-}
 
 var channelManager;
 var viewManager;
@@ -32,7 +28,6 @@ class WhimApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() {
-        var view = new SensorPairView();
-        return [ view, new SensorPairDelegate(view) ];
+        return [ new SensorPairView(), new SensorPairDelegate() ];
     }
 }
