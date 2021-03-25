@@ -75,7 +75,7 @@ class ViewManager
         if (numOfConnectedSensors == 0) {
             currentViewIndex = -1;
             view = new SensorPairView();
-            WatchUi.switchToView(view, new SensorPairDelegate(view), WatchUi.SLIDE_BLINK);
+            WatchUi.switchToView(view, new SensorPairDelegate(), WatchUi.SLIDE_BLINK);
         }
         else {
             if (currentViewIndex == numOfConnectedSensors) {
