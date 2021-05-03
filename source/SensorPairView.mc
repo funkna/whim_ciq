@@ -7,8 +7,6 @@ using Toybox.Communications;
 
 class SensorPairView extends WatchUi.View {
 
-    const VIEW_ID = PAIR;
-
     hidden var mCounter, mMessages, mTimer;
 
     function initialize() {
@@ -21,7 +19,6 @@ class SensorPairView extends WatchUi.View {
     // Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.SensorPair(dc));
-        currentViewId = VIEW_ID;
         View.findDrawableById("title").setText(Rez.Strings.AppName);
     }
 
@@ -53,18 +50,15 @@ class SensorPairView extends WatchUi.View {
     }
 }
 
-class SensorPairDelegate extends WHIMBehaviorDelegate {
+class SensorPairDelegate extends WatchUi.BehaviorDelegate {
 
-    function initialize(view) {
-        WHIMBehaviorDelegate.initialize(view);
+    function initialize() {
+        BehaviorDelegate.initialize();
     }
 
-    function onKey(keyEvent) {
-        //TODO: Remove this test key to switch views without an ANT connection.
-        var view = new SensorDetailsView();
-        WatchUi.switchToView(view, new SensorDetailsDelegate(view), WatchUi.SLIDE_IMMEDIATE);
+    function onBack() {
+        WatchUi.popView(WatchUi.SLIDE_IMMEDIATE);
         return true;
     }
-
 }
 
