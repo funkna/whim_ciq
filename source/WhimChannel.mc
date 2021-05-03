@@ -96,7 +96,6 @@ class WhimChannel extends Ant.GenericChannel
                     if (STATE_SEARCHING == state) {
                         state = STATE_PAIRED;
                         channelManager.openSearchChannel();
-                        // Swich to sensor details view - TODO: Update UI for multisensor
                         System.println(GenericChannel.getDeviceConfig().deviceNumber + ": View switched!");
                         viewManager.addSensor(deviceNumber, impactCount);
                     }
